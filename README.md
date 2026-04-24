@@ -12,9 +12,9 @@ Unlike traditional post-training pruning, this approach uses **learnable gates**
 
 Each weight is associated with a learnable gate:
 
-[
-W_{eff} = W \odot \sigma(\text{gate_scores})
-]
+$$
+W_{\text{eff}} = W \odot \sigma(\text{gate\_scores})
+$$
 
 * Gates are values between **0 and 1**
 * If a gate → **0**, the weight is effectively **pruned**
@@ -31,9 +31,9 @@ W_{eff} = W \odot \sigma(\text{gate_scores})
 
 ### 🔹 Sparsity-Aware Loss
 
-[
-\text{Total Loss} = \mathcal{L}*{task} + \lambda \cdot \mathcal{L}*{sparsity}
-]
+$$
+\text{Total Loss} = \mathcal{L}_{task} + \lambda \cdot \mathcal{L}_{sparsity}
+$$
 
 * **Task Loss** → CrossEntropy
 * **Sparsity Loss** → L1 norm of gates
